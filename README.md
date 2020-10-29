@@ -1,24 +1,12 @@
-# vue-lib-template
 
-## Project setup
-```
-npm install
-```
+vuepress
+vue-router版本应为3.4.5 [https://github.com/vuejs/vuepress/issues/2656]()
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+core-js问题 [https://github.com/vuejs/vuepress/issues/2275]()
+修改\node_modules\@vuepress\core\lib\node\webpack\createBaseConfig.js
+333行
+```js
+   return module.paths.concat([path.resolve(process.cwd(), 'node_modules'), 'node_modules'])
+   // return module.paths.concat([path.resolve(process.cwd(), 'node_modules')])
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
